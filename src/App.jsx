@@ -122,7 +122,7 @@ const App = () => {
 
       // 2. Send to n8n (Trigger the email)
       // REPLACE 'YOUR_N8N_WEBHOOK_URL' WITH THE URL YOU COPIED IN STEP 1
-      await fetch('https://n8n.srv950234.hstgr.cloud/webhook-test/maturity-funnel', {
+      await fetch('https://n8n.srv950234.hstgr.cloud/webhook/maturity-funnel', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)

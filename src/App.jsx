@@ -324,7 +324,7 @@ const App = () => {
 
           <div className="bg-slate-50 p-6 text-center border-t border-slate-200">
             <p className="text-slate-500 text-sm mb-3">Need to interpret these results with an expert?</p>
-            <button onClick={() => window.open('https://calendly.com', '_blank')} className="text-indigo-600 font-bold hover:underline flex items-center justify-center gap-1 mx-auto">
+            <button onClick={() => window.open('https://calendly.com/agiautomations/30min', '_blank')} className="text-indigo-600 font-bold hover:underline flex items-center justify-center gap-1 mx-auto">
               Book a free 15-min Strategy Review <ChevronRight size={16} />
             </button>
           </div>

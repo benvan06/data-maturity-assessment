@@ -37,44 +37,261 @@ const App = () => {
 
   // --- CONFIGURATION: THE QUESTIONS ---
   const questions = [
+    // Section 1: Data Foundation & Trust (Questions 1-7)
     {
-      category: "Strategy",
-      question: "How does your organization currently make critical business decisions?",
+      category: "Data Foundation & Trust",
+      question: "How confident are you in the accuracy of your billing, invoicing, and revenue numbers across all systems?",
       options: [
-        { text: "Gut feeling and experience mostly.", points: 1 },
-        { text: "We look at ad-hoc spreadsheets when needed.", points: 2 },
-        { text: "We review standard dashboards weekly.", points: 3 },
-        { text: "AI-driven insights guide our daily actions.", points: 4 }
+        { text: "We frequently find discrepancies that require manual reconciliation and corrections", points: 1 },
+        { text: "We catch most errors, but it requires weekly reconciliation meetings to align the numbers", points: 2 },
+        { text: "Our numbers are usually accurate, with only occasional discrepancies that we can trace and fix", points: 3 },
+        { text: "We have complete confidence—automated validation ensures 99%+ accuracy without manual checks", points: 4 }
       ]
     },
     {
-      category: "Infrastructure",
-      question: "Where is your customer data currently stored?",
+      category: "Data Foundation & Trust",
+      question: "When two executives ask the same question (e.g., 'What were sales last month?'), what happens?",
       options: [
-        { text: "Various Excel sheets on different computers.", points: 1 },
-        { text: "In the CRM (Salesforce/HubSpot) only.", points: 2 },
-        { text: "Centralized Data Warehouse (Snowflake/BigQuery).", points: 3 },
-        { text: "Real-time Data Lakehouse with streaming.", points: 4 }
+        { text: "They often get different answers depending on which spreadsheet or person they ask", points: 1 },
+        { text: "They get the same answer eventually, but only after someone reconciles multiple sources", points: 2 },
+        { text: "They usually get the same answer from our reporting system, with minor timing differences", points: 3 },
+        { text: "They always get identical answers instantly from one authoritative system", points: 4 }
       ]
     },
     {
-      category: "Governance",
-      question: "What happens when someone finds an error in a report?",
+      category: "Data Foundation & Trust",
+      question: "How is your critical business data (pricing, inventory, customer information) managed?",
       options: [
-        { text: "Panic. We don't know where the data came from.", points: 1 },
-        { text: "IT is emailed to fix it manually.", points: 2 },
-        { text: "The data owner is notified via automated alert.", points: 3 },
-        { text: "Self-healing pipelines correct anomalies automatically.", points: 4 }
+        { text: "Entered manually in multiple places—spreadsheets, databases, and systems that don't talk to each other", points: 1 },
+        { text: "Mostly centralized, but key data still requires manual copying or imports between systems", points: 2 },
+        { text: "Entered once with automated syncing, though some manual updates are still needed for exceptions", points: 3 },
+        { text: "Entered once and automatically distributed across all systems with validation rules", points: 4 }
       ]
     },
     {
-      category: "Talent",
-      question: "Who is responsible for data analysis in your team?",
+      category: "Data Foundation & Trust",
+      question: "How quickly can an executive access the core business metrics they need?",
       options: [
-        { text: "Everyone does their own thing in Excel.", points: 1 },
-        { text: "We have one 'Excel Guy' everyone asks.", points: 2 },
-        { text: "Dedicated Data Analysts support the team.", points: 3 },
-        { text: "Data Engineers and Data Scientists work together.", points: 4 }
+        { text: "Usually requires asking IT, an analyst, or waiting for someone to build a report (several hours to days)", points: 1 },
+        { text: "Can access within 30-60 minutes by navigating multiple systems or reports", points: 2 },
+        { text: "Can access within 10-15 minutes through our dashboards or reporting tools", points: 3 },
+        { text: "Instant access (under 2 minutes) through real-time dashboards on any device", points: 4 }
+      ]
+    },
+    {
+      category: "Data Foundation & Trust",
+      question: "How do you discover data errors, duplicates, or inconsistencies?",
+      options: [
+        { text: "Usually when something goes wrong operationally or a customer complains", points: 1 },
+        { text: "Through periodic manual audits and spot-checks by our team", points: 2 },
+        { text: "Through scheduled automated reports that flag anomalies for review", points: 3 },
+        { text: "Through real-time automated alerts that immediately flag issues before they impact decisions", points: 4 }
+      ]
+    },
+    {
+      category: "Data Foundation & Trust",
+      question: "What would happen if all Excel spreadsheets disappeared from your company tomorrow?",
+      options: [
+        { text: "Complete operational paralysis—we couldn't function", points: 1 },
+        { text: "Major disruption for at least a week while we rebuild critical processes", points: 2 },
+        { text: "Short-term inconvenience, but core operations would continue", points: 3 },
+        { text: "Minimal impact—spreadsheets are only used for one-off analysis, not operations", points: 4 }
+      ]
+    },
+    {
+      category: "Data Foundation & Trust",
+      question: "How do you feel walking into board meetings or investor presentations?",
+      options: [
+        { text: "Anxious that the numbers might be wrong and I'll be caught off guard", points: 1 },
+        { text: "Somewhat confident, but I triple-check everything beforehand and bring backup", points: 2 },
+        { text: "Mostly confident, with occasional concerns about edge cases or timing issues", points: 3 },
+        { text: "Completely confident—the data is validated and I can defend every number", points: 4 }
+      ]
+    },
+
+    // Section 2: Reporting & Visibility (Questions 8-13)
+    {
+      category: "Reporting & Visibility",
+      question: "How much time does your team spend creating reports, dashboards, and presentations for leadership meetings?",
+      options: [
+        { text: "1-2 full days per week across multiple people (8+ hours)", points: 1 },
+        { text: "Half a day per week (3-4 hours) pulling data and building decks", points: 2 },
+        { text: "1-2 hours per week making minor updates to existing dashboards", points: 3 },
+        { text: "Under 30 minutes per week—dashboards auto-update and we focus on analysis", points: 4 }
+      ]
+    },
+    {
+      category: "Reporting & Visibility",
+      question: "How current is the business data you see when making decisions?",
+      options: [
+        { text: "Usually 1-2 weeks old; we see last week's or last month's numbers", points: 1 },
+        { text: "2-3 days old; yesterday's numbers available by mid-morning", points: 2 },
+        { text: "End-of-day prior; we see yesterday's complete results first thing this morning", points: 3 },
+        { text: "Real-time or hourly; we see today's performance as it happens", points: 4 }
+      ]
+    },
+    {
+      category: "Reporting & Visibility",
+      question: "When Sales, Finance, and Operations discuss performance, what happens?",
+      options: [
+        { text: "We often debate whose numbers are correct and why they differ", points: 1 },
+        { text: "We use different systems but reconcile before important meetings", points: 2 },
+        { text: "We mostly align, but sometimes need clarification on definitions or timing", points: 3 },
+        { text: "Everyone uses the same dashboard—no debates, just strategic discussions", points: 4 }
+      ]
+    },
+    {
+      category: "Reporting & Visibility",
+      question: "How well-defined and aligned are your key performance indicators across the organization?",
+      options: [
+        { text: "Every department tracks different metrics; there's no common scorecard", points: 1 },
+        { text: "We have KPIs, but they're not consistently tracked or universally understood", points: 2 },
+        { text: "We've identified our North Star Metrics, but not everyone references them regularly", points: 3 },
+        { text: "5-7 North Star Metrics are tracked religiously by everyone, executive to frontline", points: 4 }
+      ]
+    },
+    {
+      category: "Reporting & Visibility",
+      question: "How easily can you compare current performance to past periods?",
+      options: [
+        { text: "Requires manual data compilation from multiple sources; takes hours or days", points: 1 },
+        { text: "Can be done with some effort by running reports and building comparisons (30-60 minutes)", points: 2 },
+        { text: "Available through standard reports with period-over-period views (5-10 minutes)", points: 3 },
+        { text: "Instant visual comparisons (month/quarter/year) built into every dashboard", points: 4 }
+      ]
+    },
+    {
+      category: "Reporting & Visibility",
+      question: "When you identify a problem in the data, how quickly can you act?",
+      options: [
+        { text: "Days to weeks—need to verify, investigate, and coordinate response", points: 1 },
+        { text: "2-3 days—need to confirm the issue and plan the response", points: 2 },
+        { text: "Same day or next day—clear ownership and response protocols exist", points: 3 },
+        { text: "Within hours—automated workflows trigger immediate responses or alerts", points: 4 }
+      ]
+    },
+
+    // Section 3: Predictive Capability (Questions 14-19)
+    {
+      category: "Predictive Capability",
+      question: "How do you identify at-risk customers or expansion opportunities?",
+      options: [
+        { text: "We find out when they cancel, stop buying, or explicitly tell us", points: 1 },
+        { text: "Through manual review of usage patterns or sales rep intuition", points: 2 },
+        { text: "Through periodic analysis of customer health scores or engagement metrics", points: 3 },
+        { text: "Through predictive models that automatically flag risk/opportunity before behavior changes", points: 4 }
+      ]
+    },
+    {
+      category: "Predictive Capability",
+      question: "How accurate are your sales and inventory forecasts?",
+      options: [
+        { text: "Frequently off by 30%+; we're constantly surprised by stockouts or excess inventory", points: 1 },
+        { text: "Accurate within 20-30%; we get the direction right but magnitude wrong", points: 2 },
+        { text: "Accurate within 10-20%; reliable enough for most planning purposes", points: 3 },
+        { text: "Accurate within 10%; we confidently plan production, staffing, and cash flow", points: 4 }
+      ]
+    },
+    {
+      category: "Predictive Capability",
+      question: "How do you anticipate market shifts, competitive threats, or opportunities?",
+      options: [
+        { text: "We react when customers or competitors make moves; we're always catching up", points: 1 },
+        { text: "Through quarterly strategic reviews and occasional market research", points: 2 },
+        { text: "Through monthly tracking of leading indicators and competitive intelligence", points: 3 },
+        { text: "Through real-time monitoring of signals that predict changes 4-8 weeks ahead", points: 4 }
+      ]
+    },
+    {
+      category: "Predictive Capability",
+      question: "How do you model 'what-if' scenarios (e.g., sales drop 20%, new region launch)?",
+      options: [
+        { text: "We don't—too time-consuming or we lack the tools", points: 1 },
+        { text: "Manually in spreadsheets over several days; limited scenarios possible", points: 2 },
+        { text: "Through financial models that take a few hours to update and run", points: 3 },
+        { text: "Through dynamic tools that show impact across all metrics within minutes", points: 4 }
+      ]
+    },
+    {
+      category: "Predictive Capability",
+      question: "What percentage of your strategic decisions are based on predictive insights vs. reactive responses?",
+      options: [
+        { text: "Under 25%—we're mostly firefighting and responding to what happened", points: 1 },
+        { text: "25-50%—we try to be proactive but often get pulled into reactive mode", points: 2 },
+        { text: "50-75%—we're increasingly proactive but still have reactive moments", points: 3 },
+        { text: "Over 75%—we anticipate and shape outcomes rather than respond to them", points: 4 }
+      ]
+    },
+    {
+      category: "Predictive Capability",
+      question: "In the last quarter, how often were you blindsided by events your data should have predicted?",
+      options: [
+        { text: "Multiple times per month (stockouts, cash issues, customer losses, competitor moves)", points: 1 },
+        { text: "Once or twice per month—significant but manageable surprises", points: 2 },
+        { text: "Once per quarter—rare but impactful surprises", points: 3 },
+        { text: "Almost never—our leading indicators catch issues early", points: 4 }
+      ]
+    },
+
+    // Section 4: Automation & Strategic Leverage (Questions 20-25)
+    {
+      category: "Automation & Strategic Leverage",
+      question: "What percentage of routine business decisions happen automatically vs. requiring manual approval?",
+      options: [
+        { text: "Under 25%—nearly everything requires human review and approval", points: 1 },
+        { text: "25-50%—some routine tasks automated but most decisions still manual", points: 2 },
+        { text: "50-75%—majority of routine decisions automated with exception handling", points: 3 },
+        { text: "Over 75%—pricing, inventory, outreach, allocation mostly automated", points: 4 }
+      ]
+    },
+    {
+      category: "Automation & Strategic Leverage",
+      question: "How is AI or machine learning deployed in your business operations?",
+      options: [
+        { text: "Not deployed; we're exploring or in pilot phase only", points: 1 },
+        { text: "Limited deployment in 1-2 areas with modest impact", points: 2 },
+        { text: "Active deployment in 3-5 areas showing measurable business value", points: 3 },
+        { text: "Integrated across operations, customer experience, and strategy with proven ROI", points: 4 }
+      ]
+    },
+    {
+      category: "Automation & Strategic Leverage",
+      question: "How defensible is your competitive advantage based on proprietary data?",
+      options: [
+        { text: "We use the same data sources as our competitors; no unique advantage", points: 1 },
+        { text: "We have some unique data but haven't leveraged it into competitive advantage", points: 2 },
+        { text: "Our data insights give us edge in specific areas that competitors struggle to replicate", points: 3 },
+        { text: "Our proprietary data and models create a moat that's nearly impossible to copy", points: 4 }
+      ]
+    },
+    {
+      category: "Automation & Strategic Leverage",
+      question: "If investors or acquirers conducted due diligence on your data infrastructure today, what would happen?",
+      options: [
+        { text: "Major red flags; would likely reduce valuation or kill deals", points: 1 },
+        { text: "Concerns raised; would require remediation plan and extended timeline", points: 2 },
+        { text: "Generally acceptable; minor improvements needed but wouldn't block deals", points: 3 },
+        { text: "Competitive advantage; would increase valuation multiple due to data assets", points: 4 }
+      ]
+    },
+    {
+      category: "Automation & Strategic Leverage",
+      question: "What would happen if your top data analyst or IT person left tomorrow?",
+      options: [
+        { text: "Critical systems would fail; we'd scramble to keep operations running", points: 1 },
+        { text: "Significant disruption for weeks; dependent on tribal knowledge", points: 2 },
+        { text: "Short-term slowdown; documentation exists but transition would be bumpy", points: 3 },
+        { text: "Minimal disruption; systems documented, automated, and team-operated", points: 4 }
+      ]
+    },
+    {
+      category: "Automation & Strategic Leverage",
+      question: "What have you done with time and money saved through data automation?",
+      options: [
+        { text: "We haven't achieved automation savings yet", points: 1 },
+        { text: "Savings were absorbed by other operational needs; no strategic reinvestment", points: 2 },
+        { text: "Some reinvestment in growth, but not systematically allocated", points: 3 },
+        { text: "Consistently reinvested in new products, markets, and talent—compounding growth", points: 4 }
       ]
     }
   ];
@@ -122,7 +339,7 @@ const App = () => {
 
       // 2. Send to n8n (Trigger the email)
       // REPLACE 'YOUR_N8N_WEBHOOK_URL' WITH THE URL YOU COPIED IN STEP 1
-      await fetch('https://n8n.srv950234.hstgr.cloud/webhook/maturity-funnel', {
+      await fetch('https://n8n.srv950234.hstgr.cloud/webhook-test/maturity-funnel', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)

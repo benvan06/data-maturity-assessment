@@ -40,258 +40,258 @@ const App = () => {
     // Section 1: Data Foundation & Trust (Questions 1-7)
     {
       category: "Data Foundation & Trust",
-      question: "How confident are you in the accuracy of your billing, invoicing, and revenue numbers across all systems?",
+      question: "How confident are you that every commission split, referral fee, and invoice across all branches is calculated correctly?",
       options: [
-        { text: "We frequently find discrepancies that require manual reconciliation and corrections", points: 1 },
-        { text: "We catch most errors, but it requires weekly reconciliation meetings to align the numbers", points: 2 },
-        { text: "Our numbers are usually accurate, with only occasional discrepancies that we can trace and fix", points: 3 },
-        { text: "We have complete confidence—automated validation ensures 99%+ accuracy without manual checks", points: 4 }
+        { text: "We regularly discover discrepancies weeks after completion—agents complain, referral partners chase payments, and we're constantly firefighting commission disputes", points: 1 },
+        { text: "We catch most errors during month-end reconciliation, but it creates tension with agents and delays payroll by days", points: 2 },
+        { text: "Errors are rare and usually caught within a few days, though manual checking is still required", points: 3 },
+        { text: "Every commission, split, and fee is automatically validated in real-time—zero disputes, instant payroll confidence", points: 4 }
       ]
     },
     {
       category: "Data Foundation & Trust",
-      question: "When two executives ask the same question (e.g., 'What were sales last month?'), what happens?",
+      question: "When you ask 'Which branch is performing best this month?' or 'Which agents are hitting target?', what happens?",
       options: [
-        { text: "They often get different answers depending on which spreadsheet or person they ask", points: 1 },
-        { text: "They get the same answer eventually, but only after someone reconciles multiple sources", points: 2 },
-        { text: "They usually get the same answer from our reporting system, with minor timing differences", points: 3 },
-        { text: "They always get identical answers instantly from one authoritative system", points: 4 }
+        { text: "Each branch manager gives you different numbers from their own spreadsheets—you spend hours reconciling and still aren't sure who's right", points: 1 },
+        { text: "You get consistent numbers eventually, but only after your ops team spends half a day pulling reports from multiple systems and calling branches", points: 2 },
+        { text: "Your CRM gives you mostly consistent data, though branch managers sometimes question the figures", points: 3 },
+        { text: "One dashboard shows real-time performance across every branch, agent, and property—everyone sees the same truth instantly", points: 4 }
       ]
     },
     {
       category: "Data Foundation & Trust",
-      question: "How is your critical business data (pricing, inventory, customer information) managed?",
+      question: "How is your critical property data (valuations, measurements, EPC ratings, viewing feedback) managed across branches?",
       options: [
-        { text: "Entered manually in multiple places—spreadsheets, databases, and systems that don't talk to each other", points: 1 },
-        { text: "Mostly centralized, but key data still requires manual copying or imports between systems", points: 2 },
-        { text: "Entered once with automated syncing, though some manual updates are still needed for exceptions", points: 3 },
-        { text: "Entered once and automatically distributed across all systems with validation rules", points: 4 }
+        { text: "Every branch has their own way—Excel spreadsheets, paper files, memory—and when an agent leaves, their data leaves with them", points: 1 },
+        { text: "Mostly in your CRM, but agents still keep 'their own' spreadsheets because they don't trust the system, creating duplicate versions of truth", points: 2 },
+        { text: "Centralized in one system, though agents sometimes bypass it for speed, and data quality varies by branch", points: 3 },
+        { text: "One authoritative system with mandatory fields and validation—every property detail captured once, accessible everywhere, audit-ready", points: 4 }
       ]
     },
     {
       category: "Data Foundation & Trust",
-      question: "How quickly can an executive access the core business metrics they need?",
+      question: "How quickly can you access critical metrics like pipeline value, conversion rates, or average days-to-offer by branch?",
       options: [
-        { text: "Usually requires asking IT, an analyst, or waiting for someone to build a report (several hours to days)", points: 1 },
-        { text: "Can access within 30-60 minutes by navigating multiple systems or reports", points: 2 },
-        { text: "Can access within 10-15 minutes through our dashboards or reporting tools", points: 3 },
-        { text: "Instant access (under 2 minutes) through real-time dashboards on any device", points: 4 }
+        { text: "You have to ask someone to pull the data, which takes hours or days, and by then the moment has passed", points: 1 },
+        { text: "You can get it within 30-60 minutes by logging into multiple systems and exporting reports", points: 2 },
+        { text: "You can access it within 10-15 minutes through your CRM's reporting dashboard", points: 3 },
+        { text: "Instant access on your phone—live pipeline value, conversion funnel, and branch league tables updating in real-time", points: 4 }
       ]
     },
     {
       category: "Data Foundation & Trust",
-      question: "How do you discover data errors, duplicates, or inconsistencies?",
+      question: "How do you discover missing property details, duplicate listings, or incorrect valuation data?",
       options: [
-        { text: "Usually when something goes wrong operationally or a customer complains", points: 1 },
-        { text: "Through periodic manual audits and spot-checks by our team", points: 2 },
-        { text: "Through scheduled automated reports that flag anomalies for review", points: 3 },
-        { text: "Through real-time automated alerts that immediately flag issues before they impact decisions", points: 4 }
+        { text: "When a buyer complains, a portal rejects the listing, or you lose an instruction because the valuation was based on wrong square footage", points: 1 },
+        { text: "Through weekly manual audits where you spot-check listings and chase branch managers for corrections", points: 2 },
+        { text: "Through automated reports that flag incomplete listings or anomalies for branch review", points: 3 },
+        { text: "Through real-time validation that prevents incomplete data entry—listings can't go live until all fields are complete and verified", points: 4 }
       ]
     },
     {
       category: "Data Foundation & Trust",
-      question: "What would happen if all Excel spreadsheets disappeared from your company tomorrow?",
+      question: "What would happen to your operations if all Excel spreadsheets disappeared from your agency tomorrow?",
       options: [
-        { text: "Complete operational paralysis—we couldn't function", points: 1 },
-        { text: "Major disruption for at least a week while we rebuild critical processes", points: 2 },
-        { text: "Short-term inconvenience, but core operations would continue", points: 3 },
-        { text: "Minimal impact—spreadsheets are only used for one-off analysis, not operations", points: 4 }
+        { text: "Total chaos—commission calculations, pipeline tracking, and branch performance reporting would stop dead", points: 1 },
+        { text: "Major disruption for a week minimum—key processes depend on individual spreadsheets passed around by email", points: 2 },
+        { text: "Short-term inconvenience but core operations would continue—spreadsheets mostly used for one-off analysis", points: 3 },
+        { text: "Minimal impact—everything runs through your integrated platform; spreadsheets are decorative, not operational", points: 4 }
       ]
     },
     {
       category: "Data Foundation & Trust",
-      question: "How do you feel walking into board meetings or investor presentations?",
+      question: "How do you feel presenting your multi-branch performance to your board, investors, or franchise network?",
       options: [
-        { text: "Anxious that the numbers might be wrong and I'll be caught off guard", points: 1 },
-        { text: "Somewhat confident, but I triple-check everything beforehand and bring backup", points: 2 },
-        { text: "Mostly confident, with occasional concerns about edge cases or timing issues", points: 3 },
-        { text: "Completely confident—the data is validated and I can defend every number", points: 4 }
+        { text: "Anxious—you've been caught out before when branch figures didn't reconcile, and you know there are probably errors you haven't found yet", points: 1 },
+        { text: "Nervous—you've triple-checked everything and brought backup spreadsheets, but you're still waiting for someone to question a figure", points: 2 },
+        { text: "Mostly confident, though you occasionally have to caveat data from certain branches or time periods", points: 3 },
+        { text: "Complete confidence—every figure is validated, auditable, and you can drill down into any branch or agent on the spot", points: 4 }
       ]
     },
 
     // Section 2: Reporting & Visibility (Questions 8-13)
     {
       category: "Reporting & Visibility",
-      question: "How much time does your team spend creating reports, dashboards, and presentations for leadership meetings?",
+      question: "How much time does your team spend preparing branch performance reports, commission statements, and management presentations?",
       options: [
-        { text: "1-2 full days per week across multiple people (8+ hours)", points: 1 },
-        { text: "Half a day per week (3-4 hours) pulling data and building decks", points: 2 },
-        { text: "1-2 hours per week making minor updates to existing dashboards", points: 3 },
-        { text: "Under 30 minutes per week—dashboards auto-update and we focus on analysis", points: 4 }
+        { text: "Someone spends 1-2 full days every week pulling data from your CRM, spreadsheets, and portal accounts just to tell you what happened last week", points: 1 },
+        { text: "Half a day per week manually consolidating reports across branches and creating PowerPoint decks", points: 2 },
+        { text: "1-2 hours per week making minor updates to templates and adding commentary", points: 3 },
+        { text: "Under 30 minutes—automated dashboards update themselves; your team focuses on strategy, not data entry", points: 4 }
       ]
     },
     {
       category: "Reporting & Visibility",
-      question: "How current is the business data you see when making decisions?",
+      question: "How current is your view of market activity, viewing bookings, offer activity, and pipeline movement?",
       options: [
-        { text: "Usually 1-2 weeks old; we see last week's or last month's numbers", points: 1 },
-        { text: "2-3 days old; yesterday's numbers available by mid-morning", points: 2 },
-        { text: "End-of-day prior; we see yesterday's complete results first thing this morning", points: 3 },
-        { text: "Real-time or hourly; we see today's performance as it happens", points: 4 }
+        { text: "You see last week's or last month's numbers—by the time you know an instruction is at risk, it's too late to save it", points: 1 },
+        { text: "You see yesterday's activity by mid-morning—enough to react but not prevent issues", points: 2 },
+        { text: "You see end-of-previous-day complete—morning briefings are accurate but not live", points: 3 },
+        { text: "Real-time—you can see viewing bookings, offer submissions, and fallen-throughs as they happen across all branches", points: 4 }
       ]
     },
     {
       category: "Reporting & Visibility",
-      question: "When Sales, Finance, and Operations discuss performance, what happens?",
+      question: "When your branch managers discuss performance in network meetings, what happens?",
       options: [
-        { text: "We often debate whose numbers are correct and why they differ", points: 1 },
-        { text: "We use different systems but reconcile before important meetings", points: 2 },
-        { text: "We mostly align, but sometimes need clarification on definitions or timing", points: 3 },
-        { text: "Everyone uses the same dashboard—no debates, just strategic discussions", points: 4 }
+        { text: "Arguments erupt—'My figures show I'm top performer,' 'No, my spreadsheet says we are'—you spend 20 minutes reconciling before you can start strategizing", points: 1 },
+        { text: "You reconcile the data before meetings to avoid embarrassment, but managers still question the methodology behind the figures", points: 2 },
+        { text: "Mostly aligned on the numbers, though occasional debates about how things are categorized or timed", points: 3 },
+        { text: "Zero debate—everyone's looking at the same live dashboard; meetings focus on 'why' and 'what next', not 'what happened'", points: 4 }
       ]
     },
     {
       category: "Reporting & Visibility",
-      question: "How well-defined and aligned are your key performance indicators across the organization?",
+      question: "How well-aligned are your key performance indicators across all branches?",
       options: [
-        { text: "Every department tracks different metrics; there's no common scorecard", points: 1 },
-        { text: "We have KPIs, but they're not consistently tracked or universally understood", points: 2 },
-        { text: "We've identified our North Star Metrics, but not everyone references them regularly", points: 3 },
-        { text: "5-7 North Star Metrics are tracked religiously by everyone, executive to frontline", points: 4 }
+        { text: "Every branch tracks different metrics; some focus on valuations, others on completions, others on revenue—there's no common scorecard", points: 1 },
+        { text: "You've defined KPIs centrally, but branches interpret and track them differently; comparison is difficult", points: 2 },
+        { text: "You have network-wide KPIs that branches mostly follow, though some create their own additional metrics", points: 3 },
+        { text: "5-7 North Star Metrics (e.g., market share, valuation-to-instruction %, completion rate) tracked identically across every branch—clear accountability", points: 4 }
       ]
     },
     {
       category: "Reporting & Visibility",
-      question: "How easily can you compare current performance to past periods?",
+      question: "How easily can you compare this month's performance to last month, same time last year, or pre-pandemic levels?",
       options: [
-        { text: "Requires manual data compilation from multiple sources; takes hours or days", points: 1 },
-        { text: "Can be done with some effort by running reports and building comparisons (30-60 minutes)", points: 2 },
-        { text: "Available through standard reports with period-over-period views (5-10 minutes)", points: 3 },
-        { text: "Instant visual comparisons (month/quarter/year) built into every dashboard", points: 4 }
+        { text: "Requires manually pulling data from archived spreadsheets and old CRM exports—takes half a day and accuracy is questionable", points: 1 },
+        { text: "Possible with effort by running separate reports and manually building comparison tables (30-60 minutes)", points: 2 },
+        { text: "Available through standard reports with month-on-month and year-on-year views (5-10 minutes)", points: 3 },
+        { text: "Instant visual trends—every metric shows you daily/weekly/monthly/annual comparisons with one click", points: 4 }
       ]
     },
     {
       category: "Reporting & Visibility",
-      question: "When you identify a problem in the data, how quickly can you act?",
+      question: "When you spot a problem—conversion rate dropping, pipeline thinning, competitor winning market share in a territory—how quickly can you act?",
       options: [
-        { text: "Days to weeks—need to verify, investigate, and coordinate response", points: 1 },
-        { text: "2-3 days—need to confirm the issue and plan the response", points: 2 },
-        { text: "Same day or next day—clear ownership and response protocols exist", points: 3 },
-        { text: "Within hours—automated workflows trigger immediate responses or alerts", points: 4 }
+        { text: "Days to weeks—by the time you've confirmed it's real and coordinated a response, you've lost three more instructions", points: 1 },
+        { text: "2-3 days—need to investigate with branch managers, verify the trend, then plan intervention", points: 2 },
+        { text: "Same day or next—clear escalation paths and branch managers empowered to respond quickly", points: 3 },
+        { text: "Within hours—automated alerts trigger immediate branch actions; area managers notified before the trend becomes a crisis", points: 4 }
       ]
     },
 
     // Section 3: Predictive Capability (Questions 14-19)
     {
       category: "Predictive Capability",
-      question: "How do you identify at-risk customers or expansion opportunities?",
+      question: "How do you identify which vendors are about to reduce their asking price, pull out, or switch to a competitor?",
       options: [
-        { text: "We find out when they cancel, stop buying, or explicitly tell us", points: 1 },
-        { text: "Through manual review of usage patterns or sales rep intuition", points: 2 },
-        { text: "Through periodic analysis of customer health scores or engagement metrics", points: 3 },
-        { text: "Through predictive models that automatically flag risk/opportunity before behavior changes", points: 4 }
+        { text: "You find out when they call to terminate the instruction or when the board goes up next door with a rival agent", points: 1 },
+        { text: "Through agent intuition and weekly pipeline reviews where they flag 'concerns' anecdotally", points: 2 },
+        { text: "Through monthly analysis of engagement metrics—viewing requests, portal interest, feedback patterns", points: 3 },
+        { text: "Through predictive scoring that automatically flags at-risk instructions 2-3 weeks before vendors make decisions—time to intervene", points: 4 }
       ]
     },
     {
       category: "Predictive Capability",
-      question: "How accurate are your sales and inventory forecasts?",
+      question: "How accurately can you predict which property types, price bands, and postcodes will be in demand next quarter?",
       options: [
-        { text: "Frequently off by 30%+; we're constantly surprised by stockouts or excess inventory", points: 1 },
-        { text: "Accurate within 20-30%; we get the direction right but magnitude wrong", points: 2 },
-        { text: "Accurate within 10-20%; reliable enough for most planning purposes", points: 3 },
-        { text: "Accurate within 10%; we confidently plan production, staffing, and cash flow", points: 4 }
+        { text: "Completely reactive—you list what vendors give you and hope buyers materialize; frequently caught with wrong stock mix", points: 1 },
+        { text: "Based on 'feel' from experienced agents and basic trend observation—directionally right but specifics wrong", points: 2 },
+        { text: "Using historical seasonal patterns and current market reports—accurate within 20% for planning purposes", points: 3 },
+        { text: "Using predictive models combining your transaction data, portal search trends, and economic indicators—accurate within 10%, informing valuation strategy and marketing spend", points: 4 }
       ]
     },
     {
       category: "Predictive Capability",
-      question: "How do you anticipate market shifts, competitive threats, or opportunities?",
+      question: "How do you know when a competitor is aggressively targeting your territory, poaching your agents, or winning market share?",
       options: [
-        { text: "We react when customers or competitors make moves; we're always catching up", points: 1 },
-        { text: "Through quarterly strategic reviews and occasional market research", points: 2 },
-        { text: "Through monthly tracking of leading indicators and competitive intelligence", points: 3 },
-        { text: "Through real-time monitoring of signals that predict changes 4-8 weeks ahead", points: 4 }
+        { text: "When you lose three instructions in a row to the same competitor, or an agent hands in notice and you had no idea they were being courted", points: 1 },
+        { text: "Through quarterly market share reports and gossip at industry events—always playing catch-up", points: 2 },
+        { text: "Through monthly competitive analysis tracking instruction wins/losses and portal presence by postcode", points: 3 },
+        { text: "Through real-time monitoring of competitor pricing, instruction wins, agent LinkedIn activity, and search volume shifts—4-8 weeks early warning", points: 4 }
       ]
     },
     {
       category: "Predictive Capability",
-      question: "How do you model 'what-if' scenarios (e.g., sales drop 20%, new region launch)?",
+      question: "How do you model 'what-if' scenarios like 'What if we open a new branch?', 'What if interest rates rise 1%?', or 'What if we lose our top-performing branch manager?'",
       options: [
-        { text: "We don't—too time-consuming or we lack the tools", points: 1 },
-        { text: "Manually in spreadsheets over several days; limited scenarios possible", points: 2 },
-        { text: "Through financial models that take a few hours to update and run", points: 3 },
-        { text: "Through dynamic tools that show impact across all metrics within minutes", points: 4 }
+        { text: "You don't—too complex, so you make gut decisions and hope for the best", points: 1 },
+        { text: "Manually in spreadsheets over several days with lots of assumptions—can only run one or two scenarios before exhaustion sets in", points: 2 },
+        { text: "Through financial models that take a few hours to update—can test 3-4 scenarios per strategic planning session", points: 3 },
+        { text: "Through dynamic tools that show impact on revenue, cash flow, and market position across all branches within minutes—test 10+ scenarios per session", points: 4 }
       ]
     },
     {
       category: "Predictive Capability",
-      question: "What percentage of your strategic decisions are based on predictive insights vs. reactive responses?",
+      question: "What percentage of your strategic decisions are based on predictive insights vs. firefighting yesterday's problems?",
       options: [
-        { text: "Under 25%—we're mostly firefighting and responding to what happened", points: 1 },
-        { text: "25-50%—we try to be proactive but often get pulled into reactive mode", points: 2 },
-        { text: "50-75%—we're increasingly proactive but still have reactive moments", points: 3 },
-        { text: "Over 75%—we anticipate and shape outcomes rather than respond to them", points: 4 }
+        { text: "Under 25%—you're constantly reacting to fallen-throughs, agent complaints, lost instructions, and cash flow surprises", points: 1 },
+        { text: "25-50%—you try to be strategic but market urgency and operational fires keep pulling you backward", points: 2 },
+        { text: "50-75%—increasingly proactive with planning cycles, though still get blindsided by market shifts", points: 3 },
+        { text: "Over 75%—you're setting the pace in your market because you see opportunities and threats before competitors", points: 4 }
       ]
     },
     {
       category: "Predictive Capability",
-      question: "In the last quarter, how often were you blindsided by events your data should have predicted?",
+      question: "How many times in the last quarter were you blindsided by something your data should have predicted?",
       options: [
-        { text: "Multiple times per month (stockouts, cash issues, customer losses, competitor moves)", points: 1 },
-        { text: "Once or twice per month—significant but manageable surprises", points: 2 },
-        { text: "Once per quarter—rare but impactful surprises", points: 3 },
-        { text: "Almost never—our leading indicators catch issues early", points: 4 }
+        { text: "Multiple times per month—sudden cash crunches, unexpected instruction losses, agent departures, or completion rate drops that killed your forecast", points: 1 },
+        { text: "Once or twice per month—significant surprises that required urgent responses and Board explanations", points: 2 },
+        { text: "Once per quarter—rare but impactful events that caught you off guard", points: 3 },
+        { text: "Almost never—your leading indicators flag issues early enough to mitigate or prevent them", points: 4 }
       ]
     },
 
     // Section 4: Automation & Strategic Leverage (Questions 20-25)
     {
       category: "Automation & Strategic Leverage",
-      question: "What percentage of routine business decisions happen automatically vs. requiring manual approval?",
+      question: "What percentage of routine operational decisions happen automatically vs. requiring your manual approval or intervention?",
       options: [
-        { text: "Under 25%—nearly everything requires human review and approval", points: 1 },
-        { text: "25-50%—some routine tasks automated but most decisions still manual", points: 2 },
-        { text: "50-75%—majority of routine decisions automated with exception handling", points: 3 },
-        { text: "Over 75%—pricing, inventory, outreach, allocation mostly automated", points: 4 }
+        { text: "Under 25%—you or your ops team manually approve commission splits, marketing budgets, viewing priorities, and vendor communications daily", points: 1 },
+        { text: "25-50%—some workflows automated (portal feeds, email triggers) but most decisions still need human approval", points: 2 },
+        { text: "50-75%—majority of routine operations automated with exception-only human review", points: 3 },
+        { text: "Over 75%—commission calculations, vendor updates, viewing scheduling, portal optimization happen automatically; you focus on growth strategy", points: 4 }
       ]
     },
     {
       category: "Automation & Strategic Leverage",
-      question: "How is AI or machine learning deployed in your business operations?",
+      question: "How is AI or machine learning actively improving your valuation accuracy, lead conversion, or client retention?",
       options: [
-        { text: "Not deployed; we're exploring or in pilot phase only", points: 1 },
-        { text: "Limited deployment in 1-2 areas with modest impact", points: 2 },
-        { text: "Active deployment in 3-5 areas showing measurable business value", points: 3 },
-        { text: "Integrated across operations, customer experience, and strategy with proven ROI", points: 4 }
+        { text: "Not deployed—you're still relying on agent experience and manual processes for everything", points: 1 },
+        { text: "Experimenting with AI valuation tools or chatbots but minimal business impact yet", points: 2 },
+        { text: "Active deployment in 2-3 areas (e.g., automated valuation models, lead scoring) showing measurable improvement", points: 3 },
+        { text: "Integrated AI across valuations, vendor communications, buyer matching, and pricing strategy—proven ROI and competitive edge", points: 4 }
       ]
     },
     {
       category: "Automation & Strategic Leverage",
-      question: "How defensible is your competitive advantage based on proprietary data?",
+      question: "How defensible is your competitive advantage based on your proprietary market data and insights?",
       options: [
-        { text: "We use the same data sources as our competitors; no unique advantage", points: 1 },
-        { text: "We have some unique data but haven't leveraged it into competitive advantage", points: 2 },
-        { text: "Our data insights give us edge in specific areas that competitors struggle to replicate", points: 3 },
-        { text: "Our proprietary data and models create a moat that's nearly impossible to copy", points: 4 }
+        { text: "You use the same portals, Land Registry data, and market reports as every other agent—zero unique advantage", points: 1 },
+        { text: "You've accumulated years of local data but haven't structured it or leveraged it strategically", points: 2 },
+        { text: "Your transaction history and market insights give you edge in pricing and vendor trust that competitors can't easily match", points: 3 },
+        { text: "Your proprietary micro-market data, predictive models, and automated insights create a moat—vendors and buyers can't get this intelligence anywhere else", points: 4 }
       ]
     },
     {
       category: "Automation & Strategic Leverage",
-      question: "If investors or acquirers conducted due diligence on your data infrastructure today, what would happen?",
+      question: "If a consolidator, PE firm, or franchise buyer conducted due diligence on your data and systems today, what would happen?",
       options: [
-        { text: "Major red flags; would likely reduce valuation or kill deals", points: 1 },
-        { text: "Concerns raised; would require remediation plan and extended timeline", points: 2 },
-        { text: "Generally acceptable; minor improvements needed but wouldn't block deals", points: 3 },
-        { text: "Competitive advantage; would increase valuation multiple due to data assets", points: 4 }
+        { text: "Deal killer—inconsistent records, data scattered across systems, no audit trail; they'd walk away or slash valuation by 30%+", points: 1 },
+        { text: "Serious concerns—would require 6-month remediation plan and escrow holdback; would definitely hurt valuation multiple", points: 2 },
+        { text: "Acceptable with caveats—minor improvements needed, slight valuation discount, but deal could proceed", points: 3 },
+        { text: "Valuation enhancer—clean data, automated operations, scalable systems would command premium multiple; acquirers would compete for you", points: 4 }
       ]
     },
     {
       category: "Automation & Strategic Leverage",
-      question: "What would happen if your top data analyst or IT person left tomorrow?",
+      question: "What would happen to your data operations if your longest-serving branch manager or office manager left tomorrow?",
       options: [
-        { text: "Critical systems would fail; we'd scramble to keep operations running", points: 1 },
-        { text: "Significant disruption for weeks; dependent on tribal knowledge", points: 2 },
-        { text: "Short-term slowdown; documentation exists but transition would be bumpy", points: 3 },
-        { text: "Minimal disruption; systems documented, automated, and team-operated", points: 4 }
+        { text: "Catastrophic—they hold all the 'how things work' knowledge; commission calculations, client relationships, and local market intelligence would walk out the door", points: 1 },
+        { text: "Major disruption for weeks—heavy reliance on tribal knowledge and personal spreadsheets; would take months to fully recover", points: 2 },
+        { text: "Short-term disruption—some documented processes but significant handover period needed", points: 3 },
+        { text: "Minimal disruption—all processes documented and systematized; new person could step in within days with full capability", points: 4 }
       ]
     },
     {
       category: "Automation & Strategic Leverage",
-      question: "What have you done with time and money saved through data automation?",
+      question: "What have you done with time and money saved through operational efficiency and automation?",
       options: [
-        { text: "We haven't achieved automation savings yet", points: 1 },
-        { text: "Savings were absorbed by other operational needs; no strategic reinvestment", points: 2 },
-        { text: "Some reinvestment in growth, but not systematically allocated", points: 3 },
-        { text: "Consistently reinvested in new products, markets, and talent—compounding growth", points: 4 }
+        { text: "No efficiency gains yet—still manually intensive and fighting to keep heads above water", points: 1 },
+        { text: "Any savings immediately absorbed by other operational pressures; no strategic reinvestment possible", points: 2 },
+        { text: "Some reinvestment in technology or marketing, but ad-hoc rather than systematic growth strategy", points: 3 },
+        { text: "Systematically reinvested in new branches, premium marketing, agent recruitment, and client experience—compounding market share growth", points: 4 }
       ]
     }
   ];
@@ -367,27 +367,27 @@ const App = () => {
           <div className="bg-indigo-900 p-10 text-white text-center relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-full opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
             <BarChart2 size={56} className="mx-auto mb-6 text-indigo-300" />
-            <h1 className="text-3xl md:text-5xl font-bold mb-4 tracking-tight">Data Maturity Assessment</h1>
+            <h1 className="text-3xl md:text-5xl font-bold mb-4 tracking-tight">Estate Agency Data Maturity Assessment</h1>
             <p className="text-indigo-200 text-lg max-w-lg mx-auto">
-              Discover where your organization stands on the curve from "Chaos" to "AI-Driven."
+              Discover where your multi-branch agency stands on the journey from "Spreadsheet Chaos" to "AI-Driven Market Leader."
             </p>
           </div>
           <div className="p-10">
             <div className="grid md:grid-cols-3 gap-6 mb-10">
                <div className="flex flex-col items-center text-center">
                  <div className="bg-indigo-50 p-3 rounded-full text-indigo-600 mb-3"><Shield size={24} /></div>
-                 <h3 className="font-bold text-slate-800">Assess Risk</h3>
-                 <p className="text-sm text-slate-500">Find governance gaps.</p>
+                 <h3 className="font-bold text-slate-800">Identify Risks</h3>
+                 <p className="text-sm text-slate-500">Commission errors, data gaps, compliance issues.</p>
                </div>
                <div className="flex flex-col items-center text-center">
                  <div className="bg-indigo-50 p-3 rounded-full text-indigo-600 mb-3"><TrendingUp size={24} /></div>
-                 <h3 className="font-bold text-slate-800">Benchmark</h3>
-                 <p className="text-sm text-slate-500">Compare to competitors.</p>
+                 <h3 className="font-bold text-slate-800">Benchmark Performance</h3>
+                 <p className="text-sm text-slate-500">See where you stand vs. market leaders.</p>
                </div>
                <div className="flex flex-col items-center text-center">
                  <div className="bg-indigo-50 p-3 rounded-full text-indigo-600 mb-3"><CheckCircle size={24} /></div>
-                 <h3 className="font-bold text-slate-800">Action Plan</h3>
-                 <p className="text-sm text-slate-500">Get a custom roadmap.</p>
+                 <h3 className="font-bold text-slate-800">Get Your Roadmap</h3>
+                 <p className="text-sm text-slate-500">Tailored plan for your agency's growth.</p>
                </div>
             </div>
             <button
@@ -551,4 +551,3 @@ const App = () => {
   );
 };
 
-export default App;

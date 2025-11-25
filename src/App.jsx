@@ -306,10 +306,11 @@ const App = () => {
   };
 
   // --- HANDLERS ---
-  const handleAnswer = (points) => {
-    const newAnswers = [...answers, points];
+  const handleAnswer = (optionIndex) => {
+    const selectedOption = questions[currentQuestion].options[optionIndex];
+    const newAnswers = [...answers, optionIndex];
     setAnswers(newAnswers);
-    setScore(score + points);
+    setScore(score + selectedOption.points);
 
     if (currentQuestion < questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
@@ -324,12 +325,21 @@ const App = () => {
 
     const finalLevel = getMaturityLevel(score);
 
+    // Create detailed answers with full question and answer text
+    const detailedAnswers = questions.map((question, index) => ({
+      category: question.category,
+      question: question.question,
+      answer: question.options[answers[index]].text,
+      points: question.options[answers[index]].points
+    }));
+
     const payload = {
       ...lead,
       score: score,
+      maxScore: questions.length * 4,
       maturityLevel: finalLevel.title,
       maturityId: finalLevel.id, // This is what n8n looks for!
-      answers: answers,
+      detailedAnswers: detailedAnswers, // Detailed answers with full text
       submittedAt: new Date().toISOString()
     };
 
@@ -338,7 +348,6 @@ const App = () => {
       // await addDoc(collection(db, "leads"), payload); // Uncomment when using real Firebase
 
       // 2. Send to n8n (Trigger the email)
-      // REPLACE 'YOUR_N8N_WEBHOOK_URL' WITH THE URL YOU COPIED IN STEP 1
       await fetch('https://n8n.srv950234.hstgr.cloud/webhook-test/maturity-funnel', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -424,7 +433,7 @@ const App = () => {
             {questions[currentQuestion].options.map((option, idx) => (
               <button
                 key={idx}
-                onClick={() => handleAnswer(option.points)}
+                onClick={() => handleAnswer(idx)}
                 className="w-full text-left p-5 border-2 border-slate-100 rounded-xl hover:border-indigo-500 hover:bg-indigo-50 transition-all group flex items-start gap-4"
               >
                 <div className="mt-1 w-5 h-5 rounded-full border-2 border-slate-300 group-hover:border-indigo-500 flex-shrink-0"></div>
@@ -551,3 +560,4 @@ const App = () => {
   );
 };
 
+export default App;

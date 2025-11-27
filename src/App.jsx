@@ -32,7 +32,7 @@ const App = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState([]);
   const [score, setScore] = useState(0);
-  const [lead, setLead] = useState({ name: '', email: '', company: '' });
+  const [lead, setLead] = useState({ name: '', email: '', company: '', role: '', phone: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   // --- CONFIGURATION: THE QUESTIONS ---
@@ -476,6 +476,39 @@ const App = () => {
                 placeholder="jane@company.com"
                 value={lead.email}
                 onChange={(e) => setLead({...lead, email: e.target.value})}
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-slate-700 mb-1">Company Name</label>
+              <input
+                required
+                type="text"
+                className="w-full p-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none"
+                placeholder="ABC Estate Agents"
+                value={lead.company}
+                onChange={(e) => setLead({...lead, company: e.target.value})}
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-slate-700 mb-1">Job Title / Role</label>
+              <input
+                required
+                type="text"
+                className="w-full p-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none"
+                placeholder="Managing Director"
+                value={lead.role}
+                onChange={(e) => setLead({...lead, role: e.target.value})}
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-slate-700 mb-1">Phone Number</label>
+              <input
+                required
+                type="tel"
+                className="w-full p-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none"
+                placeholder="+44 7700 900000"
+                value={lead.phone}
+                onChange={(e) => setLead({...lead, phone: e.target.value})}
               />
             </div>
 

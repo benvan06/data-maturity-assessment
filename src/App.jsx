@@ -348,7 +348,7 @@ const App = () => {
       // await addDoc(collection(db, "leads"), payload); // Uncomment when using real Firebase
 
       // 2. Send to n8n (Trigger the email)
-      await fetch('https://n8n.srv950234.hstgr.cloud/webhook-test/maturity-funnel', {
+      await fetch('https://n8n.srv950234.hstgr.cloud/webhook/maturity-funnel', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)

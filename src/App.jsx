@@ -1,16 +1,6 @@
 import React, { useState } from 'react';
 import { ArrowRight, ArrowLeft, BarChart2, CheckCircle, Shield, TrendingUp, ChevronRight, Loader2, Database, Eye, Target, Zap } from 'lucide-react';
 
-const firebaseConfig = {
-  apiKey: "AIzaSyDxM1IK9uXVtlZRtJPkqmcy0eMEAXfcbgc",
-  authDomain: "data-maturity-funnel.firebaseapp.com",
-  projectId: "data-maturity-funnel",
-  storageBucket: "data-maturity-funnel.firebasestorage.app",
-  messagingSenderId: "686472283312",
-  appId: "1:686472283312:web:e04c3713c0bff158fbe775",
-  measurementId: "G-V1MSZHX78K"
-};
-
 const categories = [
   { id: 'foundation', name: 'Data Foundation & Trust', icon: Database, count: 4 },
   { id: 'reporting', name: 'Reporting & Visibility', icon: Eye, count: 4 },

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Maturity Assessment | AGI Automations</title>
+    <meta name="description" content="Free 5-minute assessment for multi-branch estate agencies. Discover your data maturity level and get tailored recommendations to transform your operations." />
+    <meta property="og:title" content="Estate Agency Data Maturity Assessment" />
+    <meta property="og:description" content="Where does your multi-branch agency stand? Take the free 5-minute assessment and get personalised recommendations." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://assessment.agi-automations.com" />
+    <link rel="icon" type="image/png" href="/logo.png" />
+
+    <!-- GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-18364E2NK1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-18364E2NK1');
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+
+    <!-- Cookie Consent -->
+    <div id="cookieConsent" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#1e293b;color:white;padding:16px 24px;z-index:9999;font-size:14px;font-family:Inter,sans-serif;">
+      <div style="max-width:700px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+        <p style="margin:0;flex:1;">We use cookies (Google Analytics) to understand how visitors use this site. <a href="https://www.agi-automations.com/privacy-policy.html" style="color:#a78bfa;">Privacy Policy</a></p>
+        <div style="display:flex;gap:8px;">
+          <button onclick="acceptCookies()" style="background:#6366f1;color:white;border:none;padding:8px 20px;border-radius:6px;font-weight:600;cursor:pointer;">Accept</button>
+          <button onclick="declineCookies()" style="background:transparent;color:#94a3b8;border:1px solid #475569;padding:8px 20px;border-radius:6px;font-weight:600;cursor:pointer;">Decline</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      function acceptCookies(){localStorage.setItem('cookieConsent','accepted');document.getElementById('cookieConsent').style.display='none';}
+      function declineCookies(){localStorage.setItem('cookieConsent','declined');document.getElementById('cookieConsent').style.display='none';window['ga-disable-G-18364E2NK1']=true;}
+      if(!localStorage.getItem('cookieConsent')){document.getElementById('cookieConsent').style.display='block';}
+      else if(localStorage.getItem('cookieConsent')==='declined'){window['ga-disable-G-18364E2NK1']=true;}
+    </script>
+  </body>
+</html>

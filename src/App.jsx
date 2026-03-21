@@ -2,26 +2,16 @@ import React, { useState } from 'react';
 import { ArrowRight, ArrowLeft, BarChart2, CheckCircle, Shield, TrendingUp, ChevronRight, Loader2, Database, Eye, Target, Zap } from 'lucide-react';
 
 const categories = [
-  { id: 'foundation', name: 'Data Foundation & Trust', icon: Database, count: 4 },
-  { id: 'reporting', name: 'Reporting & Visibility', icon: Eye, count: 4 },
-  { id: 'predictive', name: 'Predictive Capability', icon: Target, count: 4 },
-  { id: 'automation', name: 'Automation & Leverage', icon: Zap, count: 3 }
+  { id: 'data', name: 'Data & Systems', icon: Database, count: 3 },
+  { id: 'governance', name: 'Governance & Ownership', icon: Shield, count: 4 },
+  { id: 'decisions', name: 'Decision-Making & Process', icon: Target, count: 4 },
+  { id: 'aireadiness', name: 'AI Readiness & Leverage', icon: Zap, count: 4 }
 ];
 
 const questions = [
-  // Data Foundation & Trust (4 questions)
+  // Data & Systems (3 questions)
   {
-    category: 'foundation',
-    question: "How confident are you that every commission split and referral fee across all branches is calculated correctly?",
-    options: [
-      { text: "We regularly discover errors weeks later \u2014 agents complain and referral partners chase payments", points: 1 },
-      { text: "We catch most errors at month-end, but it delays payroll and creates tension", points: 2 },
-      { text: "Errors are rare and usually caught within days, though manual checking is still needed", points: 3 },
-      { text: "Every commission and fee is validated automatically in real-time \u2014 zero disputes", points: 4 }
-    ]
-  },
-  {
-    category: 'foundation',
+    category: 'data',
     question: "When you ask \u2018Which branch is performing best this month?\u2019 \u2014 what happens?",
     options: [
       { text: "Each branch gives different numbers from their own spreadsheets \u2014 hours spent reconciling", points: 1 },
@@ -31,7 +21,7 @@ const questions = [
     ]
   },
   {
-    category: 'foundation',
+    category: 'data',
     question: "How quickly can you access pipeline value, conversion rates, or days-to-offer by branch?",
     options: [
       { text: "Hours or days \u2014 someone has to pull the data, and by then the moment\u2019s passed", points: 1 },
@@ -41,19 +31,7 @@ const questions = [
     ]
   },
   {
-    category: 'foundation',
-    question: "What would happen if all spreadsheets disappeared from your agency tomorrow?",
-    options: [
-      { text: "Total chaos \u2014 commission calculations, pipeline tracking, and reporting would stop", points: 1 },
-      { text: "Major disruption for a week \u2014 key processes depend on individual spreadsheets", points: 2 },
-      { text: "Short-term inconvenience \u2014 spreadsheets mostly used for one-off analysis", points: 3 },
-      { text: "Minimal impact \u2014 everything runs through our integrated platform", points: 4 }
-    ]
-  },
-
-  // Reporting & Visibility (4 questions)
-  {
-    category: 'reporting',
+    category: 'data',
     question: "How much time does your team spend preparing branch performance reports each week?",
     options: [
       { text: "1\u20132 full days pulling data from CRM, spreadsheets, and portal accounts", points: 1 },
@@ -62,108 +40,130 @@ const questions = [
       { text: "Under 30 minutes \u2014 automated dashboards update themselves", points: 4 }
     ]
   },
+
+  // Governance & Ownership (4 questions)
   {
-    category: 'reporting',
-    question: "How current is your view of viewing bookings, offer activity, and pipeline movement?",
+    category: 'governance',
+    question: "Who is ultimately responsible for data quality across all your branches?",
     options: [
-      { text: "Last week\u2019s or last month\u2019s numbers \u2014 by the time we know, it\u2019s too late", points: 1 },
-      { text: "Yesterday\u2019s activity by mid-morning \u2014 enough to react but not prevent", points: 2 },
-      { text: "End-of-previous-day complete \u2014 morning briefings are accurate but not live", points: 3 },
-      { text: "Real-time \u2014 we see viewings, offers, and fallen-throughs as they happen", points: 4 }
+      { text: "Nobody \u2014 it\u2019s everyone\u2019s job, which means it\u2019s nobody\u2019s job", points: 1 },
+      { text: "Branch managers handle their own data, with no central oversight", points: 2 },
+      { text: "One person (ops director or similar) oversees it, but has no formal authority or KPIs", points: 3 },
+      { text: "A named role with clear authority, KPIs, and escalation rights", points: 4 }
     ]
   },
   {
-    category: 'reporting',
-    question: "How well-aligned are your KPIs across all branches?",
+    category: 'governance',
+    question: "When a branch manager consistently enters incomplete or inconsistent data, what happens?",
+    options: [
+      { text: "Nothing \u2014 we don\u2019t monitor individual data quality", points: 1 },
+      { text: "Someone might mention it informally, but there\u2019s no consequence", points: 2 },
+      { text: "It gets flagged in reviews, but data quality isn\u2019t tied to performance", points: 3 },
+      { text: "It\u2019s measured, reported, and tied to their performance management", points: 4 }
+    ]
+  },
+  {
+    category: 'governance',
+    question: "How are data standards (field naming, dropdown values, process steps) decided and enforced?",
+    options: [
+      { text: "There are no standards \u2014 each branch does it their own way", points: 1 },
+      { text: "We\u2019ve written standards but nobody follows them consistently", points: 2 },
+      { text: "Standards exist and are mostly followed, with occasional drift", points: 3 },
+      { text: "Standards are centrally defined, automatically enforced where possible, and regularly audited", points: 4 }
+    ]
+  },
+  {
+    category: 'governance',
+    question: "When there\u2019s a dispute about data between branches (e.g., who originated a lead, how a fee should split), how is it resolved?",
+    options: [
+      { text: "Whoever shouts loudest wins \u2014 no clear process", points: 1 },
+      { text: "The MD or ops director makes a judgment call each time", points: 2 },
+      { text: "There\u2019s a defined process but it\u2019s slow and inconsistent", points: 3 },
+      { text: "Clear decision rights, documented rules, and fast resolution \u2014 under 24 hours", points: 4 }
+    ]
+  },
+
+  // Decision-Making & Process (4 questions)
+  {
+    category: 'decisions',
+    question: "How are strategic decisions (pricing, marketing spend, staffing) made across your branches?",
+    options: [
+      { text: "Each branch decides independently \u2014 the MD reviews results after the fact", points: 1 },
+      { text: "The MD makes most decisions based on experience and gut feel", points: 2 },
+      { text: "Decisions are informed by data, but the process varies by branch and topic", points: 3 },
+      { text: "A consistent decision framework: data informs, branches propose, leadership approves", points: 4 }
+    ]
+  },
+  {
+    category: 'decisions',
+    question: "What percentage of your leadership time is spent on strategic decisions vs firefighting?",
+    options: [
+      { text: "Under 25% strategic \u2014 constantly reacting to fallen-throughs, complaints, and surprises", points: 1 },
+      { text: "25\u201350% \u2014 we try to be strategic but fires keep pulling us backward", points: 2 },
+      { text: "50\u201375% \u2014 increasingly proactive, though still blindsided occasionally", points: 3 },
+      { text: "Over 75% \u2014 we anticipate problems before they escalate", points: 4 }
+    ]
+  },
+  {
+    category: 'decisions',
+    question: "How well-aligned are your KPIs and success metrics across all branches?",
     options: [
       { text: "Every branch tracks different metrics \u2014 there\u2019s no common scorecard", points: 1 },
       { text: "We\u2019ve defined KPIs centrally, but branches interpret them differently", points: 2 },
       { text: "Network-wide KPIs that branches mostly follow, with some variation", points: 3 },
-      { text: "5\u20137 North Star Metrics tracked identically across every branch", points: 4 }
+      { text: "Identical metrics tracked the same way in every branch, reviewed weekly", points: 4 }
     ]
   },
   {
-    category: 'reporting',
-    question: "When you spot a problem \u2014 conversion rate dropping, pipeline thinning \u2014 how quickly can you act?",
+    category: 'decisions',
+    question: "When you introduce a new process or tool, how quickly do all branches adopt it?",
     options: [
-      { text: "Days to weeks \u2014 by the time it\u2019s confirmed, we\u2019ve lost more instructions", points: 1 },
-      { text: "2\u20133 days to investigate, verify the trend, and plan intervention", points: 2 },
-      { text: "Same day \u2014 clear escalation paths and empowered branch managers", points: 3 },
-      { text: "Within hours \u2014 automated alerts trigger action before it becomes a crisis", points: 4 }
+      { text: "Months, if ever \u2014 branches resist change and there\u2019s no enforcement", points: 1 },
+      { text: "4\u20138 weeks with heavy chasing and inconsistent adoption", points: 2 },
+      { text: "2\u20134 weeks with a structured rollout plan and training", points: 3 },
+      { text: "Under 2 weeks \u2014 change management is built into how we operate", points: 4 }
     ]
   },
 
-  // Predictive Capability (4 questions)
+  // AI Readiness & Leverage (4 questions)
   {
-    category: 'predictive',
+    category: 'aireadiness',
     question: "How do you identify which vendors are about to reduce price, pull out, or switch to a competitor?",
     options: [
       { text: "When they call to terminate or the board goes up next door with a rival", points: 1 },
-      { text: "Agent intuition and weekly pipeline reviews with anecdotal flags", points: 2 },
+      { text: "Agent intuition and weekly pipeline reviews", points: 2 },
       { text: "Monthly analysis of engagement metrics \u2014 viewing requests, feedback patterns", points: 3 },
-      { text: "Predictive scoring flags at-risk instructions 2\u20133 weeks early", points: 4 }
+      { text: "Automated scoring flags at-risk instructions 2\u20133 weeks early", points: 4 }
     ]
   },
   {
-    category: 'predictive',
-    question: "How accurately can you predict which property types and postcodes will be in demand next quarter?",
+    category: 'aireadiness',
+    question: "What percentage of routine operational decisions happen automatically vs needing manual approval?",
     options: [
-      { text: "Completely reactive \u2014 we list what vendors give us and hope buyers appear", points: 1 },
-      { text: "Based on agent \u2018feel\u2019 and basic trends \u2014 directionally right, specifics wrong", points: 2 },
-      { text: "Using historical patterns and market reports \u2014 accurate within 20%", points: 3 },
-      { text: "Predictive models combining our data and market indicators \u2014 within 10%", points: 4 }
-    ]
-  },
-  {
-    category: 'predictive',
-    question: "What percentage of your decisions are strategic vs. firefighting yesterday\u2019s problems?",
-    options: [
-      { text: "Under 25% \u2014 constantly reacting to fallen-throughs, complaints, and surprises", points: 1 },
-      { text: "25\u201350% \u2014 we try to be strategic but fires keep pulling us backward", points: 2 },
-      { text: "50\u201375% \u2014 increasingly proactive, though still blindsided by shifts", points: 3 },
-      { text: "Over 75% \u2014 we see opportunities and threats before competitors", points: 4 }
-    ]
-  },
-  {
-    category: 'predictive',
-    question: "How often are you blindsided by something your data should have predicted?",
-    options: [
-      { text: "Multiple times per month \u2014 cash crunches, instruction losses, agent departures", points: 1 },
-      { text: "Once or twice per month \u2014 significant surprises needing urgent response", points: 2 },
-      { text: "Once per quarter \u2014 rare but impactful events", points: 3 },
-      { text: "Almost never \u2014 leading indicators flag issues early enough to prevent them", points: 4 }
-    ]
-  },
-
-  // Automation & Strategic Leverage (3 questions)
-  {
-    category: 'automation',
-    question: "What percentage of routine operational decisions happen automatically vs. needing manual approval?",
-    options: [
-      { text: "Under 25% \u2014 we manually approve commissions, budgets, and priorities daily", points: 1 },
-      { text: "25\u201350% \u2014 some workflows automated but most decisions need human approval", points: 2 },
+      { text: "Under 25% \u2014 nearly everything needs a human decision", points: 1 },
+      { text: "25\u201350% \u2014 some workflows automated but most decisions need approval", points: 2 },
       { text: "50\u201375% \u2014 routine operations automated with exception-only review", points: 3 },
-      { text: "Over 75% \u2014 routine operations run automatically; we focus on strategy", points: 4 }
+      { text: "Over 75% \u2014 routine operations run automatically; leadership focuses on strategy", points: 4 }
     ]
   },
   {
-    category: 'automation',
-    question: "If a buyer or investor conducted due diligence on your data and systems today, what would happen?",
-    options: [
-      { text: "Deal killer \u2014 inconsistent records, scattered data, no audit trail", points: 1 },
-      { text: "Serious concerns \u2014 6+ months remediation needed, valuation hit", points: 2 },
-      { text: "Acceptable with caveats \u2014 minor improvements needed, deal could proceed", points: 3 },
-      { text: "Valuation enhancer \u2014 clean data and scalable systems command a premium", points: 4 }
-    ]
-  },
-  {
-    category: 'automation',
-    question: "What would happen if your longest-serving branch or office manager left tomorrow?",
+    category: 'aireadiness',
+    question: "What would happen if your longest-serving branch manager left tomorrow?",
     options: [
       { text: "Catastrophic \u2014 they hold all the \u2018how things work\u2019 knowledge", points: 1 },
       { text: "Major disruption for weeks \u2014 heavy reliance on tribal knowledge", points: 2 },
       { text: "Short-term disruption \u2014 some documented processes but significant handover needed", points: 3 },
-      { text: "Minimal impact \u2014 all processes systematized; new person productive within days", points: 4 }
+      { text: "Minimal impact \u2014 all processes systematised; new person productive within days", points: 4 }
+    ]
+  },
+  {
+    category: 'aireadiness',
+    question: "If you deployed an AI tool tomorrow (lead scoring, automated valuations, predictive analytics), would your agency be ready to act on its outputs?",
+    options: [
+      { text: "No \u2014 we wouldn\u2019t trust it, wouldn\u2019t know who acts on it, and it would sit unused", points: 1 },
+      { text: "Probably not \u2014 we\u2019d need to redesign processes and train people first", points: 2 },
+      { text: "Partially \u2014 some teams could use it, but adoption would be patchy without a rollout plan", points: 3 },
+      { text: "Yes \u2014 we have the data infrastructure, process discipline, and team readiness to adopt immediately", points: 4 }
     ]
   }
 ];
